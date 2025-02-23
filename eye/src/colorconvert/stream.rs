@@ -24,7 +24,7 @@ where
             return Some(item);
         };
 
-        self.codec.decode(inbuf, &mut self.buf).unwrap();
+        let _ = self.codec.decode(inbuf, &mut self.buf);
         Some(Ok(&self.buf))
     }
 }
